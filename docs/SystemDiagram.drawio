@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="GxZ6jyJk3eDSPsomN1Lk">
+    <mxGraphModel dx="672" dy="568" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="eNqNppNy8QjKMxCIPf-U-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="1. Start: Main.java&lt;div&gt;Program starts and displays main menu&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="300" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eNqNppNy8QjKMxCIPf-U-2" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;fontSize=12;defaultLabelBackgroundColor=page;startSize=8;endSize=8;curved=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="359.5" y="110" as="sourcePoint" />
+            <mxPoint x="360" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eNqNppNy8QjKMxCIPf-U-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="2. Load Study Spots Data" vertex="1">
+          <mxGeometry height="60" width="120" x="305" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="eNqNppNy8QjKMxCIPf-U-6" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;fontSize=12;defaultLabelBackgroundColor=page;startSize=8;endSize=8;curved=1;" target="eNqNppNy8QjKMxCIPf-U-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="359.5" y="248" as="sourcePoint" />
+            <mxPoint x="360" y="308" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eNqNppNy8QjKMxCIPf-U-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="3. ArrayList of StudySpot Objects" vertex="1">
+          <mxGeometry height="60" width="120" x="300" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="eNqNppNy8QjKMxCIPf-U-8" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;fontSize=12;defaultLabelBackgroundColor=page;startSize=8;endSize=8;curved=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="340" y="380" as="sourcePoint" />
+            <mxPoint x="270" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eNqNppNy8QjKMxCIPf-U-9" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;fontSize=12;defaultLabelBackgroundColor=page;startSize=8;endSize=8;curved=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="370" y="380" as="sourcePoint" />
+            <mxPoint x="420" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eNqNppNy8QjKMxCIPf-U-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="4A) Display all locations" vertex="1">
+          <mxGeometry height="60" width="120" x="170" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="eNqNppNy8QjKMxCIPf-U-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="4B) Display certain locations based on filters" vertex="1">
+          <mxGeometry height="60" width="120" x="420" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="eNqNppNy8QjKMxCIPf-U-12" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;fontSize=12;defaultLabelBackgroundColor=page;startSize=8;endSize=8;curved=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="270" y="530" as="sourcePoint" />
+            <mxPoint x="320" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eNqNppNy8QjKMxCIPf-U-13" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;fontSize=12;defaultLabelBackgroundColor=page;startSize=8;endSize=8;curved=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="470" y="530" as="sourcePoint" />
+            <mxPoint x="420" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eNqNppNy8QjKMxCIPf-U-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="5. Match preference to study location" vertex="1">
+          <mxGeometry height="60" width="120" x="310" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="eNqNppNy8QjKMxCIPf-U-15" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;fontSize=12;defaultLabelBackgroundColor=page;startSize=8;endSize=8;curved=1;" target="eNqNppNy8QjKMxCIPf-U-16" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="369.5" y="670" as="sourcePoint" />
+            <mxPoint x="370" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eNqNppNy8QjKMxCIPf-U-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="6. End/Exit" vertex="1">
+          <mxGeometry height="60" width="120" x="310" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="eNqNppNy8QjKMxCIPf-U-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="User selections option" vertex="1">
+          <mxGeometry height="30" width="60" x="370" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="eNqNppNy8QjKMxCIPf-U-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="Stores locations" vertex="1">
+          <mxGeometry height="30" width="60" x="370" y="260" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
