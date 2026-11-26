@@ -1,1 +1,9 @@
 // csv file
+
+name,building,noiseLevel,studyType
+WALC Second Floor,WALC,Quiet,Individual
+HSSE Library,Stewart Center,Quiet,Individual
+PMU First Floor,PMU,Busy,Group
+WALC First Floor,WALC,Moderate,Both
+KRACH First Floor,KRACH,Moderate,Both
+3rd St Starbucks,Starbucks,Moderate,Group
