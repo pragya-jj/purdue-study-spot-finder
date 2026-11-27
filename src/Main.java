@@ -43,6 +43,13 @@ public class Main {
         if (choice.equalsIgnoreCase("yes")) {
             filterByNoiseLevel(studySpots, input);
         }
+        // Ask whether the user wants to filter by study type
+System.out.println("\nWould you like to filter by study type? (yes/no)");
+choice = input.nextLine();
+
+if (choice.equalsIgnoreCase("yes")) {
+    filterByStudyType(studySpots, input);
+}
 
         input.close();
     }
@@ -142,6 +149,52 @@ public class Main {
         // Display a message if no locations match
         if (!found) {
             System.out.println("No study spots found for this noise level.");
+        }
+    }
+
+    // Filters study spots based on the user's preferred study type
+    public static void filterByStudyType(ArrayList<StudySpot> studySpots, Scanner input) {
+
+        // Ask the user to select a study type
+        System.out.println("\nChoose a study type:");
+        System.out.println("1. Individual");
+        System.out.println("2. Group");
+        System.out.println("3. Both");
+
+        String choice = input.nextLine();
+        String selectedType = "";
+
+        // Match the user's choice to a study type
+        if (choice.equals("1")) {
+            selectedType = "Individual";
+        } else if (choice.equals("2")) {
+            selectedType = "Group";
+        } else if (choice.equals("3")) {
+            selectedType = "Both";
+        } else {
+            System.out.println("Invalid choice.");
+            return;
+        }
+
+        // Track whether any matching locations were found
+        boolean found = false;
+
+        System.out.println("\nStudy spots for " + selectedType + " studying:\n");
+
+        // Check every study spot for a matching study type
+        for (int i = 0; i < studySpots.size(); i++) {
+
+            StudySpot spot = studySpots.get(i);
+
+            if (spot.getStudyType().equalsIgnoreCase(selectedType)) {
+                spot.displayInfo();
+                found = true;
+            }
+        }
+
+        // Display a message if no locations match
+        if (!found) {
+            System.out.println("No study spots found for this study type.");
         }
     }
 }
