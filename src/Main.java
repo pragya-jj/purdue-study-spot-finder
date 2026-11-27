@@ -18,7 +18,6 @@ public class Main {
         ArrayList<StudySpot> studySpots = loadStudySpots();
 
         // Display the program title
-        System.out.println("=================================");
         System.out.println("     PURDUE STUDY SPOT FINDER");
         System.out.println("=================================");
 
@@ -49,6 +48,13 @@ choice = input.nextLine();
 
 if (choice.equalsIgnoreCase("yes")) {
     filterByStudyType(studySpots, input);
+}
+// Ask whether the user wants to filter by building
+System.out.println("\nWould you like to filter by building? (yes/no)");
+choice = input.nextLine();
+
+if (choice.equalsIgnoreCase("yes")) {
+    filterByBuilding(studySpots, input);
 }
 
         input.close();
@@ -197,5 +203,33 @@ if (choice.equalsIgnoreCase("yes")) {
             System.out.println("No study spots found for this study type.");
         }
     }
+    // Filters study spots based on the building selected by the user
+public static void filterByBuilding(ArrayList<StudySpot> studySpots, Scanner input) {
+
+    // Ask the user which building they want to search
+    System.out.println("\nEnter a building name (WALC, PMU, KRACH, Stewart Center, or Starbucks):");
+    String selectedBuilding = input.nextLine();
+
+    // Track whether any matching locations were found
+    boolean found = false;
+
+    System.out.println("\nStudy spots in " + selectedBuilding + ":\n");
+
+    // Check every study spot for a matching building
+    for (int i = 0; i < studySpots.size(); i++) {
+
+        StudySpot spot = studySpots.get(i);
+
+        if (spot.getBuilding().equalsIgnoreCase(selectedBuilding)) {
+            spot.displayInfo();
+            found = true;
+        }
+    }
+
+    // Display a message if no locations match
+    if (!found) {
+        System.out.println("No study spots found in that building.");
+    }
+}
 }
 
