@@ -1,8 +1,9 @@
+
 /*
  * Main.java
  * This class runs the Purdue Study Spot Finder program.
  * It reads study spot information from a CSV file
- * and displays the available study locations.
+ * and allows users to filter study locations.
  */
 
 // Import classes needed for reading files and storing objects
@@ -16,13 +17,14 @@ public class Main {
         // Load all study spots from the CSV file
         ArrayList<StudySpot> studySpots = loadStudySpots();
 
-        // Display all study spots
+        // Display the program title
+        System.out.println("=================================");
         System.out.println("     PURDUE STUDY SPOT FINDER");
         System.out.println("=================================");
 
+        // Display all available study spots
         System.out.println("\nAvailable Study Locations:\n");
 
-        // Go through the ArrayList and display each study spot
         for (int i = 0; i < studySpots.size(); i++) {
             studySpots.get(i).displayInfo();
         }
@@ -31,6 +33,18 @@ public class Main {
         if (studySpots.size() == 0) {
             System.out.println("No study spots were found.");
         }
+
+        // Ask the user to filter locations by noise level
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("\nWould you like to filter by noise level? (yes/no)");
+        String choice = input.nextLine();
+
+        if (choice.equalsIgnoreCase("yes")) {
+            filterByNoiseLevel(studySpots, input);
+        }
+
+        input.close();
     }
 
     // Reads the CSV file and creates StudySpot objects
@@ -84,4 +98,51 @@ public class Main {
         // Return the list of study spots
         return studySpots;
     }
+
+    // Filters study spots based on the user's preferred noise level
+    public static void filterByNoiseLevel(ArrayList<StudySpot> studySpots, Scanner input) {
+
+        // Ask the user to select a noise level
+        System.out.println("\nChoose a noise level:");
+        System.out.println("1. Quiet");
+        System.out.println("2. Moderate");
+        System.out.println("3. Busy");
+
+        String choice = input.nextLine();
+        String selectedNoise = "";
+
+        // Match the user's choice to a noise level
+        if (choice.equals("1")) {
+            selectedNoise = "Quiet";
+        } else if (choice.equals("2")) {
+            selectedNoise = "Moderate";
+        } else if (choice.equals("3")) {
+            selectedNoise = "Busy";
+        } else {
+            System.out.println("Invalid choice.");
+            return;
+        }
+
+        // Keep track of whether any matching locations were found
+        boolean found = false;
+
+        System.out.println("\nStudy spots with " + selectedNoise + " noise:\n");
+
+        // Check every study spot for a matching noise level
+        for (int i = 0; i < studySpots.size(); i++) {
+
+            StudySpot spot = studySpots.get(i);
+
+            if (spot.getNoiseLevel().equalsIgnoreCase(selectedNoise)) {
+                spot.displayInfo();
+                found = true;
+            }
+        }
+
+        // Display a message if no locations match
+        if (!found) {
+            System.out.println("No study spots found for this noise level.");
+        }
+    }
 }
+
