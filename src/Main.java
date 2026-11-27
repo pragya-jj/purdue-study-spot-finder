@@ -192,7 +192,8 @@ if (choice.equalsIgnoreCase("yes")) {
 
             StudySpot spot = studySpots.get(i);
 
-            if (spot.getStudyType().equalsIgnoreCase(selectedType)) {
+            if (spot.getStudyType().equalsIgnoreCase(selectedType) ||
+    spot.getStudyType().equalsIgnoreCase("Both")) {
                 spot.displayInfo();
                 found = true;
             }
