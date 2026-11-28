@@ -2,11 +2,10 @@
 /*
  * Main.java
  * This class runs the Purdue Study Spot Finder program.
- * It reads study spot information from a CSV file
- * and allows users to filter study locations.
+ * It reads study spot information from a CSV file and allows users to filter study locations.
  */
 
-// Import classes needed for reading files and storing objects
+// Import classes needed for this project
 import java.io.*;
 import java.util.*;
 
@@ -17,7 +16,6 @@ public class Main {
         // Load all study spots from the CSV file
         ArrayList<StudySpot> studySpots = loadStudySpots();
 
-        // Display the program title
         System.out.println("     PURDUE STUDY SPOT FINDER");
         System.out.println("=================================");
 
@@ -33,7 +31,7 @@ public class Main {
             System.out.println("No study spots were found.");
         }
 
-        // Ask the user to filter locations by noise level
+        // Ask if the user wants to filter by noise level
         Scanner input = new Scanner(System.in);
 
         System.out.println("\nWould you like to filter by noise level? (yes/no)");
@@ -42,14 +40,14 @@ public class Main {
         if (choice.equalsIgnoreCase("yes")) {
             filterByNoiseLevel(studySpots, input);
         }
-        // Ask whether the user wants to filter by study type
+        // Ask if the user wants to filter by study type
 System.out.println("\nWould you like to filter by study type? (yes/no)");
 choice = input.nextLine();
 
 if (choice.equalsIgnoreCase("yes")) {
     filterByStudyType(studySpots, input);
 }
-// Ask whether the user wants to filter by building
+// Ask if the user wants to filter by building
 System.out.println("\nWould you like to filter by building? (yes/no)");
 choice = input.nextLine();
 
@@ -100,7 +98,6 @@ if (choice.equalsIgnoreCase("yes")) {
                 }
             }
 
-            // Close the file after reading it
             fileReader.close();
 
         } catch (FileNotFoundException e) {
@@ -108,11 +105,10 @@ if (choice.equalsIgnoreCase("yes")) {
             System.out.println("Error: Study spots file could not be found.");
         }
 
-        // Return the list of study spots
         return studySpots;
     }
 
-    // Filters study spots based on the user's preferred noise level
+    // Filter study spots based on the preferred noise level
     public static void filterByNoiseLevel(ArrayList<StudySpot> studySpots, Scanner input) {
 
         // Ask the user to select a noise level
@@ -124,7 +120,7 @@ if (choice.equalsIgnoreCase("yes")) {
         String choice = input.nextLine();
         String selectedNoise = "";
 
-        // Match the user's choice to a noise level
+        // Match the user's choice of noise level
         if (choice.equals("1")) {
             selectedNoise = "Quiet";
         } else if (choice.equals("2")) {
@@ -136,7 +132,6 @@ if (choice.equalsIgnoreCase("yes")) {
             return;
         }
 
-        // Keep track of whether any matching locations were found
         boolean found = false;
 
         System.out.println("\nStudy spots with " + selectedNoise + " noise:\n");
@@ -158,7 +153,7 @@ if (choice.equalsIgnoreCase("yes")) {
         }
     }
 
-    // Filters study spots based on the user's preferred study type
+    // Filter study spots based on the preferred study type
     public static void filterByStudyType(ArrayList<StudySpot> studySpots, Scanner input) {
 
         // Ask the user to select a study type
@@ -170,7 +165,7 @@ if (choice.equalsIgnoreCase("yes")) {
         String choice = input.nextLine();
         String selectedType = "";
 
-        // Match the user's choice to a study type
+        // Match the user's choice of study type
         if (choice.equals("1")) {
             selectedType = "Individual";
         } else if (choice.equals("2")) {
@@ -182,7 +177,6 @@ if (choice.equalsIgnoreCase("yes")) {
             return;
         }
 
-        // Track whether any matching locations were found
         boolean found = false;
 
         System.out.println("\nStudy spots for " + selectedType + " studying:\n");
@@ -204,14 +198,13 @@ if (choice.equalsIgnoreCase("yes")) {
             System.out.println("No study spots found for this study type.");
         }
     }
-    // Filters study spots based on the building selected by the user
+    // Filter study spots based on a building
 public static void filterByBuilding(ArrayList<StudySpot> studySpots, Scanner input) {
 
     // Ask the user which building they want to search
     System.out.println("\nEnter a building name (WALC, PMU, KRACH, Stewart Center, or Starbucks):");
     String selectedBuilding = input.nextLine();
 
-    // Track whether any matching locations were found
     boolean found = false;
 
     System.out.println("\nStudy spots in " + selectedBuilding + ":\n");
